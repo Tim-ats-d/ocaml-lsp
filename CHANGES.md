@@ -1,9 +1,13 @@
-# unreleased
+# Unreleased
 
 ## Fixes
 
 - Fix hover on method calls not showing the type. (#1553, fixes #1552)
 - Fix error on opening `.mll` files (#1557)
+
+## Features
+
+- Add custom [`ocamllsp/refactorExtract`](https://github.com/ocaml/ocaml-lsp/blob/ocaml-lsp-server/docs/ocamllsp/refactorExtract-spec.md) request (#1545)
 
 # 1.23.0
 
