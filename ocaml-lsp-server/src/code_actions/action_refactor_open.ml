@@ -19,12 +19,12 @@ let code_action
   | changes ->
     let code_action =
       let edit : WorkspaceEdit.t =
-        let edits =
+        let changes =
           List.map changes ~f:(fun (newText, loc) ->
             let range = Range.of_loc loc |> Document.range_of_merlin_range doc in
             { TextEdit.newText; range })
         in
-        WorkspaceEdit.create ~changes:[ params.textDocument.uri, edits ] ()
+        WorkspaceEdit.create ~changes:[ params.textDocument.uri, changes ] ()
       in
       let kind = CodeActionKind.Other action_kind in
       let title = String.capitalize action_kind in
